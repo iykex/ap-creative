@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   try {
     const ownerEmail = resend.emails.send({
       from: "AP Creative Studio <inquiry@apcreativestudio.net>",
-      to: "nana@apcreativestudio.net",
+      to: "hello@apcreativestudio.net",
       subject: "NEW MESSAGE FROM YOUR WEBSITE",
       replyTo: email,
       react: EmailTemplate({ name, email, location, phone, date, details }),
