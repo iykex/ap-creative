@@ -19,33 +19,33 @@ const roboto_slab = Roboto_Slab({
 })
 
 export const metadata: Metadata = {
-  title: "AP Creative - Design Studio | Graphic Design & Branding",
+  title: "NK Creative Studio | Graphic Design & Branding",
   description:
     "Professional creative design studio offering graphic design, branding services, etc. Transform your brand vision into reality.",
   keywords: "graphic design, branding, packaging, logo design, flyers, posters",
   generator: "iykex",
-  authors: [{ name: "AP Creative Studio" }],
+  authors: [{ name: "NK Creative Studio" }],
   openGraph: {
     type: "website",
-    url: "https://www.apcreativestudio.net",
-    title: "AP Creative - Design Studio",
+    url: "https://www.nkcreativestudio.net",
+    title: "NK Creative Studio",
     description:
       "Professional creative design studio offering graphic design, branding, and packaging services.",
     images: [
       {
-        url: "https://www.apcreativestudio.net/snapshot.png",
+        url: "https://www.nkcreativestudio.net/snapshot.png",
         width: 1200,
         height: 630,
-        alt: "AP Creative Studio Website Snapshot",
+        alt: "NK Creative Studio Website Snapshot",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AP Creative - Design Studio | Graphic Design & Branding",
+    title: "NK Creative Studio | Graphic Design & Branding",
     description:
       "Professional creative design studio offering graphic design, branding, and packaging services.",
-    images: ["https://www.apcreativestudio.net/snapshot.png"],
+    images: ["https://www.nkcreativestudio.net/snapshot.png"],
   },
 }
 

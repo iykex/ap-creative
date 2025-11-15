@@ -169,7 +169,7 @@ export function EmailTemplate({ name, email, location, phone, date, details }: E
             </div>
           </div>
           <div className="footer">
-            <p>&copy; {new Date().getFullYear()} AP Creative Studio. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} NK Creative Studio. All rights reserved.</p>
             <p style={{marginTop: '8px', color: '#52525b'}}>
               This message was sent from your website contact form
             </p>

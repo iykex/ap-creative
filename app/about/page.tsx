@@ -32,7 +32,7 @@ export default function AboutPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground"
           >
-            At <span className="text-brand-accent font-semibold">AP Creative Studio</span>, creativity meets strategy.
+            At <span className="text-brand-accent font-semibold">NK Creative Studio</span>, creativity meets strategy.
             We turn ideas into impactful visuals and unforgettable experiences.
           </motion.p>
         </div>

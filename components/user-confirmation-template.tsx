@@ -109,11 +109,11 @@ export function UserConfirmationTemplate({ name }: UserConfirmationTemplateProps
             
             <div className="signature">
               <p>Best regards,</p>
-              <p>The AP Creative Studio Team</p>
+              <p>NK Creative Studio</p>
             </div>
           </div>
           <div className="footer">
-            <p>&copy; {new Date().getFullYear()} AP Creative Studio. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} NK Creative Studio. All rights reserved.</p>
             <p style={{marginTop: '8px', color: '#52525b'}}>
               If you have any urgent questions, please don't hesitate to contact us directly.
             </p>
