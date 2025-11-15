@@ -9,74 +9,11 @@ import Image from "next/image"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { motion } from "framer-motion"
 import { Eye } from "lucide-react"
-
-const categoryData: Record<string, { title: string; description: string; images: string[] }> = {
-  "birthday-flyers": {
-    title: "Birthday Flyers",
-    description: "Fun and festive birthday flyer designs perfect for celebrations.",
-    images: [
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_01.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_02.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_03.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_04.jpg",
-    ],
-  },
-  brochure: {
-    title: "Brochure",
-    description: "Innovative product design solutions that combine aesthetics with functionality.",
-    images: [
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/brochure/brc_01.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/brochure/brc_02.jpg",
-    ],
-  },
-  church: {
-    title: "Church",
-    description:
-      "Professional and inspiring church flyer designs that engage and communicate your message effectively.",
-    images: [
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/church/ch_01.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/church/ch_02.jpg",
-    ],
-  },
-  flyers: {
-    title: "Flyers",
-    description: "Professional business flyers designed to promote your services and attract clients.",
-    images: [
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_01.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_02.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_03.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_04.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_05.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_06.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_07.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_08.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_09.jpg",
-      // "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_10.jpg",
-      // "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_11.jpg",
-    ],
-  },
-  forum: {
-    title: "Forum",
-    description: "Eye-catching event flyers that create buzz and drive attendance.",
-    images: ["https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/forum/frm_01.jpg"],
-  },
-  logos: {
-    title: "Logos",
-    description: "Custom logo designs that represent your brand identity with creativity and professionalism.",
-    images: [
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_01.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_02.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_03.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_04.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_05.jpg",
-      "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_06.jpg",
-    ],
-  },
-}
+import { portfolioData } from "@/lib/portfolio-data"
 
 export default function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = use(params)
-  const data = categoryData[category]
+  const data = portfolioData[category as keyof typeof portfolioData]
   const [selectedImage, setSelectedImage] = useState(0)
   const [isDialogOpen, setIsDialogOpen] = useState(false)
 

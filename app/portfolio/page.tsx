@@ -8,40 +8,15 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Eye, Filter } from "lucide-react"
+import { portfolioData } from "@/lib/portfolio-data"
 
 export default function PortfolioPage() {
-  const categories = [
-    {
-      name: "Birthday Flyers",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_01.jpg",
-      description: "Fun and festive birthday flyer designs perfect for celebrations.",
-    },
-    {
-      name: "Brochure",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/brochure/brc_01.jpg",
-      description: "Innovative product design solutions that combine aesthetics with functionality.",
-    },
-    {
-      name: "Church",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/church/ch_01.jpg",
-      description: "Professional and inspiring church flyer designs that engage and communicate your message effectively.",
-    },
-    {
-      name: "Flyers",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_01.jpg",
-      description: "Professional business flyers designed to promote your services and attract clients.",
-    },
-    {
-      name: "Forum",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/forum/frm_01.jpg",
-      description: "Eye-catching event flyers that create buzz and drive attendance.",
-    },
-    {
-      name: "Logos",
-      image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_01.jpg",
-      description: "Custom logo designs that represent your brand identity with creativity and professionalism.",
-    },
-  ]
+  const categories = Object.entries(portfolioData).map(([key, value]) => ({
+    name: value.title,
+    image: value.images[0],
+    description: value.description,
+    slug: key,
+  }))
 
   const [activeCategory, setActiveCategory] = useState<number | null>(null)
 
@@ -120,7 +95,7 @@ export default function PortfolioPage() {
                     {category.description}
                   </p>
                   <Link
-                    href={`/portfolio/${category.name.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/portfolio/${category.slug}`}
                     className="inline-flex items-center gap-2 bg-gradient-to-r from-brand-accent to-[#ed1b24] text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-brand-accent/25 transition-all duration-300 opacity-0 group-hover:opacity-100 delay-150 transform translate-y-2 group-hover:translate-y-0"
                   >
                     View More
@@ -130,7 +105,7 @@ export default function PortfolioPage() {
                   </Link>
                 </div>
                 <Link
-                href={`/portfolio/${category.name.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/portfolio/${category.slug}`}
                 className="md:hidden absolute bottom-4 right-4 bg-background/50 backdrop-blur-sm rounded-full border-1 border-gray-200 p-2">
                   <svg
                     width="16"

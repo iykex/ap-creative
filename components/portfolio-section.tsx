@@ -5,72 +5,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { portfolioData } from "@/lib/portfolio-data"
 
-const portfolioCategories = [
-  {
-    title: "Brand Identity",
-    description: "Complete brand identities that make a lasting impression",
-    items: [
-      {
-        title: "Corporate Logo",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_01.jpg",
-        category: "logos"
-      },
-      {
-        title: "Brand Guidelines",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_02.jpg",
-        category: "logos"
-      },
-      {
-        title: "Logo Design",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_03.jpg",
-        category: "logos"
-      }
-    ]
-  },
-  {
-    title: "Print Design",
-    description: "Eye-catching print materials that stand out",
-    items: [
-      {
-        title: "Church Flyer",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/church/ch_01.jpg",
-        category: "church"
-      },
-      {
-        title: "Marketing Flyer",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/flyers/fl_01.jpg",
-        category: "flyers"
-      },
-      {
-        title: "Birthday Flyer",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/birthday_flyers/bf_01.jpg",
-        category: "birthday-flyers"
-      }
-    ]
-  },
-  {
-    title: "Marketing Materials",
-    description: "Strategic marketing designs that drive engagement",
-    items: [
-      {
-        title: "Brochure Design",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/brochure/brc_01.jpg",
-        category: "brochure"
-      },
-      {
-        title: "Forum Flyer",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/forum/frm_01.jpg",
-        category: "forum"
-      },
-      {
-        title: "Business Card",
-        image: "https://cdn.jsdelivr.net/gh/iykex/ap-creative@main/images/portfolio/logos/lg_04.jpg",
-        category: "logos"
-      }
-    ]
-  }
-]
+const portfolioCategories = Object.entries(portfolioData).map(([slug, data]) => ({
+  ...data,
+  slug,
+  items: data.images.slice(0, 3).map((image, index) => ({
+    title: `${data.title} ${index + 1}`,
+    image,
+    category: slug,
+  })),
+}))
 
 export function PortfolioSection() {
   return (
