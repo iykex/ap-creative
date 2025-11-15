@@ -48,7 +48,7 @@ export function Navigation() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="AP Creative Logo" className="h-10 w-auto" />
+            <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="NK Creative Logo" className="h-24 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

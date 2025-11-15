@@ -60,7 +60,7 @@ export function Footer() {
               >
                 <div className="flex items-center space-x-3 mb-6">
                 <Link href="/" className="flex items-center space-x-3 group">
-            <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="AP Creative Logo" className="h-10 w-auto" />
+            <img src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'} alt="NK Creative Logo" className="h-24 w-auto" />
           </Link>
                 </div>
 
