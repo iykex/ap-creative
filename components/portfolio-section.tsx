@@ -82,7 +82,10 @@ export function PortfolioSection() {
                             src={item.image}
                             alt={item.title}
                             fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="object-cover transition-all duration-500 group-hover:scale-110"
+                            loading={itemIndex < 3 ? "eager" : "lazy"}
+                            priority={itemIndex < 3}
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                           
@@ -97,7 +100,7 @@ export function PortfolioSection() {
                             </h4>
                             <Link
                               href={`/portfolio/${item.category}`}
-                              className="inline-flex items-center gap-2 px-6 py-2 bg-foreground/10 dark:bg-foreground/20 text-foreground font-medium rounded-2xl hover:bg-foreground/20 dark:hover:bg-foreground/30 transition-colors duration-300 backdrop-blur-sm group"
+                              className="inline-flex items-center gap-2 px-6 py-2 bg-foreground/10 dark:bg-foreground/20 text-white font-medium rounded-2xl hover:bg-foreground/20 dark:hover:bg-foreground/30 transition-colors duration-300 backdrop-blur-sm group"
                             >
                               View Project
                               <svg

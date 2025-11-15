@@ -85,7 +85,10 @@ export default function PortfolioPage() {
                     src={category.image}
                     alt={category.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-all duration-700 group-hover:scale-110"
+                    loading={index < 3 ? "eager" : "lazy"}
+                    priority={index < 3}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
                 </div>
